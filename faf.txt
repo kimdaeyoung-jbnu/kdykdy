@@ -1,0 +1,30 @@
+N = 4;
+n=[0:3];
+xn = [4,1,-1,1];
+Xk = dfs(xn,N);
+q=abs(Xk);
+plot(n,q);
+N
+q
+
+N = 5;
+n=[0:4];
+xn = [1,0,-1,-1,0];
+Xk = dfs(xn,N);
+q=abs(Xk);
+plot(n,q);
+N
+q
+
+
+
+
+
+function [Xk]=dfs(xn,N)
+n=[0:1:N-1];
+k=[0:1:N-1];
+WN=exp(-j*2*pi/N);
+nk=n'*k;
+WNnk=WN.^nk;
+Xk=xn*WNnk;
+end
